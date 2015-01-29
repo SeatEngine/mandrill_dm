@@ -3,7 +3,7 @@ module MandrillDm
     attr_accessor :settings
 
     def initialize(options = {})
-      self.settings = options
+      self.settings = options.reverse_merge!(return_result: true)
     end
 
     def deliver!(mail)
